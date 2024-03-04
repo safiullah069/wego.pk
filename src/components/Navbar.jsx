@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 
 
 function Navbar() {
@@ -43,15 +45,18 @@ function Navbar() {
         </div>) : null }
       </div>
       <div className="space-x-4 flex ">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Button 1
-        </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Button 2
-        </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Button 3
-        </button>
+        <div className='border-2 rounded-full p-0'>
+          <button className='px-4 m-0 py-2 '>
+            <span className='fi fi-pk '></span>
+          </button>
+          <button className='px-4 m-0 py-2 '>
+            <span className='fi fi-pk '></span>
+          </button>
+          <button className='px-4 m-0 py-2 '>
+            <span className='fi fi-pk '></span>
+          </button>
+        
+        </div>
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
           Get Started
         </button>
