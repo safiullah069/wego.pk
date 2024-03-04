@@ -1,11 +1,16 @@
 
 import './App.css'
+import BgImage from './components/BgImage'
+import Navbar from './components/Navbar'
 
 function App() {
 
 
   return (
-    <h1 className='bg-gray-700 m-auto'>Wego Hello</h1>
+    <>
+      <Navbar />
+      <BgImage />
+    </>
   )
 }
 
