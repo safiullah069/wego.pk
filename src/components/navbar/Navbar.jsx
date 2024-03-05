@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-import LeftNavBar from './left-navbar/LeftNavBar';
-import RightNavBar from './right-navbar/RightNavBar';
-import { useScroll } from '../context/useScroll'; // adjust path as needed
-import { ScrollContext } from '../context/ScrollContext'; // adjust path as needed
+import LeftNavBar from '../left-navbar/LeftNavBar';
+import RightNavBar from '../right-navbar/RightNavBar';
+import { useScroll } from '../../context/useScroll'; // adjust path as needed
+import { ScrollContext } from '../../context/ScrollContext'; // adjust path as needed
 
 
 

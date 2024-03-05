@@ -1,7 +1,7 @@
 
 import './App.css'
 import BgImage from './components/BgImage'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar/Navbar'
 
 
 
