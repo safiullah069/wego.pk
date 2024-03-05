@@ -20,3 +20,4 @@ function BgImage() {
 }
 
 export default BgImage
+
