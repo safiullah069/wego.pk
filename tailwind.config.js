@@ -8,7 +8,8 @@ content: [
     extend: {
       backgroundImage: {
         'main-section': "url('src/assets/background.webp')",
-      }
+      },
+      
     },
   },
   plugins: [],
