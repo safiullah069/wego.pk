@@ -1,48 +1,32 @@
 
 import React, { useState, useEffect } from 'react';
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-import ReactDOM from 'react-dom'
 import LeftNavBar from './left-navbar/LeftNavBar';
 import RightNavBar from './right-navbar/RightNavBar';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { useScroll } from '../context/useScroll'; // adjust path as needed
+import { ScrollContext } from '../context/ScrollContext'; // adjust path as needed
 
 
 
 function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolledCheck = window.scrollY > 5;
-      if (isScrolledCheck !== isScrolled) {
-        setIsScrolled(!isScrolled);
-      }
-    };
-
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      // Clean up the event listener
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, [isScrolled]);
+  const isScrolled = useScroll();
 
     
 
   return (
-    <>
-        <nav className={`fixed top-0 w-full flex justify-between px-20 py-4 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
+    <ScrollContext.Provider value={{ isScrolled }}>
+
+      <nav className={`fixed top-0 w-full z-10 flex justify-between px-20 py-0 m-0 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
         <div className='flex justify-end items-center'>
-        <div >       
-            {isScrolled ? <img src="src/assets/logo_dark.png" alt="Logo" className="h-10" /> : <img src="src/assets/logo_ligth.png" alt="Logo" className="h-10" />}
+          <div >       
+              {isScrolled ? <img src="src/assets/logo_dark.png" alt="Logo" className="h-8 "  /> : <img src="src/assets/logo_ligth.png" alt="Logo" className="h-8 " />}
+          </div>
+          {isScrolled ? (<LeftNavBar />) : null }
         </div>
-        {isScrolled ? (<LeftNavBar />) : null }
-      </div>
-      <RightNavBar />
+        <RightNavBar />
      
-    </nav>
-    </>
+      </nav>
+    </ScrollContext.Provider>
     )
 }
 
