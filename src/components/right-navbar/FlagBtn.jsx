@@ -11,7 +11,6 @@ function FlagBtn() {
     const { isScrolled } = useContext(ScrollContext);
     const { activeDropdown, handleDropdownClick } = useContext(dropDownContext);
 
-    const [isActive, setIsActive] = useState(false)
 
     const [btnText, setBtnText] = useState('fi-pk');
     const handleActive = (e) => {
@@ -40,7 +39,7 @@ function FlagBtn() {
         <span className={`w-4 h-3 ${btnText} fi`}></span>
         <span className='pl-2'><FontAwesomeIcon icon={faCaretDown} flip={`${activeDropdown === 'flagBtn' ? "vertical" : "horizontal"}`} className={`${!isScrolled ? "text-white" : "text-gray-500"}`} /></span>
     </button>
-    {activeDropdown === 'flagBtn' ? <div className='absolute overflow-scroll w-[700px] py-4 px-6 bg-white shadow-xl h-[500px] border rounded-lg top-10 -left-60 flex flex-wrap items-start'>
+    {activeDropdown === 'flagBtn' ? <div className='absolute overflow-scroll w-[700px] py-4 px-6 bg-white shadow-xl h-[500px] border rounded-lg top-10 -left-[230px] flex flex-wrap items-start'>
     <div className='py-2 block w-full'>Country / Region</div>
     <FlagComp onButtonClick={handleButtonClick} />
     </div> : null}

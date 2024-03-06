@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext  } from 'react'
+import React, { useEffect, useContext  } from 'react'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,7 @@ import dropDownContext from '../../context/dropDownContext/dropDownContext'
 function LeftNavBar() {
   const { activeDropdown, handleDropdownClick } = useContext(dropDownContext);
 
-  const [isClicked, setIsClicked] = useState(false)
+
   const showTravelBlog  = (e) => {
     e.stopPropagation();
     handleDropdownClick('travelBlog');

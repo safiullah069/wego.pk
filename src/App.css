@@ -2,3 +2,7 @@
     flex: 1 0 25%; /* This will make every button take up 25% of the width, creating 4 columns */
 
   }
+
+  .lang-button-container{
+    flex: 1 0 33%;
+  }
