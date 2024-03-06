@@ -5,15 +5,20 @@ import LeftNavBar from '../left-navbar/LeftNavBar';
 import RightNavBar from '../right-navbar/RightNavBar';
 import { useScroll } from '../../context/useScroll'; // adjust path as needed
 import { ScrollContext } from '../../context/ScrollContext'; // adjust path as needed
-
+import dropDownContext from '../../context/dropDownContext/dropDownContext';
 
 
 function Navbar() {
   const isScrolled = useScroll();
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-    
+  const handleDropdownClick = (dropdownId) => {
+    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
+  };
 
   return (
+    <dropDownContext.Provider value={{ activeDropdown, handleDropdownClick }}> 
+
     <ScrollContext.Provider value={{ isScrolled }}>
 
       <nav className={`fixed top-0 w-full z-10 flex justify-between px-20 py-0 m-0 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
@@ -27,6 +32,8 @@ function Navbar() {
      
       </nav>
     </ScrollContext.Provider>
+    </dropDownContext.Provider>
+
     )
 }
 

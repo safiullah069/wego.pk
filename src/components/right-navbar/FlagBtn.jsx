@@ -4,19 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { ScrollContext } from '../../context/ScrollContext'; // adjust path as needed
 import FlagComp from '../hidedComp/FlagComp';
+import dropDownContext from '../../context/dropDownContext/dropDownContext';
 
 function FlagBtn() {
 
     const { isScrolled } = useContext(ScrollContext);
+    const { activeDropdown, handleDropdownClick } = useContext(dropDownContext);
+
     const [isActive, setIsActive] = useState(false)
 
     const [btnText, setBtnText] = useState('fi-pk');
     const handleActive = (e) => {
       e.stopPropagation();
-      setIsActive(!isActive)
+
+      handleDropdownClick('flagBtn');
+
     }
     const handlePageClick = () => {
-      setIsActive(false);
+      handleDropdownClick(null);
     };
     useEffect(() => {
       document.addEventListener('click', handlePageClick);
@@ -33,9 +38,9 @@ function FlagBtn() {
 
     <button onClick={handleActive} className={`mr-[1px]  ${!isScrolled ? "bg-black bg-opacity-35 " : "bg-white border "} border-gray-300 flex justify-center items-center rounded-l-full px-3 py-[2px] m-0 `}>
         <span className={`w-4 h-3 ${btnText} fi`}></span>
-        <span className='pl-2'><FontAwesomeIcon icon={faCaretDown} flip={`${isActive ? "vertical" : "horizontal"}`} className={`${!isScrolled ? "text-white" : "text-gray-500"}`} /></span>
+        <span className='pl-2'><FontAwesomeIcon icon={faCaretDown} flip={`${activeDropdown === 'flagBtn' ? "vertical" : "horizontal"}`} className={`${!isScrolled ? "text-white" : "text-gray-500"}`} /></span>
     </button>
-    {isActive ? <div className='absolute overflow-scroll w-[700px] py-4 px-6 bg-white shadow-xl h-[500px] border rounded-lg top-10 -left-60 flex flex-wrap items-start'>
+    {activeDropdown === 'flagBtn' ? <div className='absolute overflow-scroll w-[700px] py-4 px-6 bg-white shadow-xl h-[500px] border rounded-lg top-10 -left-60 flex flex-wrap items-start'>
     <div className='py-2 block w-full'>Country / Region</div>
     <FlagComp onButtonClick={handleButtonClick} />
     </div> : null}

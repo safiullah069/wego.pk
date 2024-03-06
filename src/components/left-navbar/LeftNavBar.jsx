@@ -1,19 +1,24 @@
-import React, { useEffect, useState  } from 'react'
+import React, { useEffect, useState, useContext  } from 'react'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import TravelBlog from './TravelBlog'
+import dropDownContext from '../../context/dropDownContext/dropDownContext'
 
 
 function LeftNavBar() {
+  const { activeDropdown, handleDropdownClick } = useContext(dropDownContext);
+
   const [isClicked, setIsClicked] = useState(false)
   const showTravelBlog  = (e) => {
     e.stopPropagation();
-    setIsClicked(!isClicked)
+    handleDropdownClick('travelBlog');
+    
   }
   const handlePageClick = () => {
-    setIsClicked(false);
+    
+    handleDropdownClick(null);
   };
   useEffect(() => {
     document.addEventListener('click', handlePageClick);
@@ -34,8 +39,8 @@ function LeftNavBar() {
         </button>
         <button onClick={showTravelBlog} className=' px-0 relative font-sans font-bold m-0'>
           More 
-          <span className='px-4'><FontAwesomeIcon icon={faCaretDown} flip={`${isClicked ? "vertical" : "horizantal"}`} className='text-gray-500'/></span>
-          {isClicked ? <span className='absolute top-12 left-0 bottom-0'><TravelBlog/></span> : null}
+          <span className='px-4'><FontAwesomeIcon icon={faCaretDown} flip={`${activeDropdown === 'travelBlog' ? "vertical" : "horizantal"}`} className='text-gray-500'/></span>
+          {activeDropdown === 'travelBlog' ? <span className='absolute top-10 left-0 bottom-0'><TravelBlog/></span> : null}
         </button>
         </div>
   )
