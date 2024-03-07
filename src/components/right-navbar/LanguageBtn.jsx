@@ -33,10 +33,7 @@ function LanguageBtn() {
 
     <div className='relative'>
 
-    {/* <button onClick={handleActive} className={`mr-[1px]  ${!isScrolled ? "bg-black bg-opacity-35 " : "bg-white border "} border-gray-300 flex justify-center items-center rounded-l-full px-3 py-[2px] m-0 `}>
-        <span className={`w-4 h-3 ${btnText} fi`}></span>
-        <span className='pl-2'><FontAwesomeIcon icon={faCaretDown} flip={`${activeDropdown === 'flagBtn' ? "vertical" : "horizontal"}`} className={`${!isScrolled ? "text-white" : "text-gray-500"}`} /></span>
-    </button> */}
+    
     <button onClick={handleActive} className={`  ${!isScrolled ? "bg-black bg-opacity-35 mr-[1px]" : "bg-white border-y mr-0"} border-gray-300 flex justify-center items-center rounded-none px-3 m-0 py-[2px]  `}>
             
       <span className={`${isScrolled ? "text-black" : "text-white"} font-light text-sm`}>{btnText}</span>
@@ -47,11 +44,7 @@ function LanguageBtn() {
     <LanguageComp onButtonClick={handleButtonClick} />
     </div> : null}
     </div>
-  //   <button className={`  ${!isScrolled ? "bg-black bg-opacity-35 mr-[1px]" : "bg-white border-y mr-0"} border-gray-300 flex justify-center items-center rounded-none px-3 m-0 py-[2px]  `}>
-            
-  //   <span className={`${isScrolled ? "text-black" : "text-white"} font-light text-sm`}>EN</span>
-  //   <span className='pl-2'><FontAwesomeIcon icon={faCaretDown} className={`${!isScrolled ? "text-white" : "text-gray-500"}`}/></span>
-  // </button>
+ 
   )
 }
 
