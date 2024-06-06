@@ -6,6 +6,7 @@ import RightNavBar from '../right-navbar/RightNavBar';
 import { useScroll } from '../../context/useScroll'; // adjust path as needed
 import { ScrollContext } from '../../context/ScrollContext'; // adjust path as needed
 import dropDownContext from '../../context/dropDownContext/dropDownContext';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -23,9 +24,9 @@ function Navbar() {
 
       <nav className={`fixed top-0 w-full z-10 flex justify-between px-20 py-0 m-0 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
         <div className='flex justify-end items-center'>
-          <div >       
+          <Link to={`/`}>       
               {isScrolled ? <img src="src/assets/logo_dark.png" alt="Logo" className="h-8 "  /> : <img src="src/assets/logo_ligth.png" alt="Logo" className="h-8 " />}
-          </div>
+          </Link>
           {isScrolled ? (<LeftNavBar />) : null }
         </div>
         <RightNavBar />

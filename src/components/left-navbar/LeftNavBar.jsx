@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import TravelBlog from './TravelBlog'
 import dropDownContext from '../../context/dropDownContext/dropDownContext'
+import {  NavLink } from 'react-router-dom'
 
 
 function LeftNavBar() {
@@ -27,16 +28,20 @@ function LeftNavBar() {
 
   return (
     <div className='space-x-8 mx-8 '>
-            <button className=' px-0 py-4 font-sans font-bold m-0 border-b-4 border-[#6ece3e]'>
+            <NavLink to={`/flights`} style={({ isActive }) => ({
+            borderBottom: isActive ? '4px solid #6ece3e' : 'none',
+          })} className=' px-0 py-4 font-sans font-bold m-0 '>
             Flights 
-        </button>
-        <button className=' px-0 py-4 font-sans font-bold m-0'>
+            </NavLink>
+        <NavLink to={`/hotels`}  style={({ isActive }) => ({
+            borderBottom: isActive ? '4px solid #6ece3e' : 'none',
+          })}  className=' px-0 py-4 font-sans font-bold m-0'>
             Hotels
-        </button>
+        </NavLink>
         
-        <button className=' px-0 py-4 font-sans font-bold m-0'>
+        <NavLink to={`/business`} className=' px-0 py-4 font-sans font-bold m-0'>
             Wego Pro <span className='font-normal'>Business Travel</span>
-        </button>
+        </NavLink>
         <button onClick={showTravelBlog} className=' px-0 relative font-sans font-bold m-0'>
           More 
           <span className='px-4'><FontAwesomeIcon icon={faCaretDown} flip={`${activeDropdown === 'travelBlog' ? "vertical" : "horizantal"}`} className='text-gray-500'/></span>
