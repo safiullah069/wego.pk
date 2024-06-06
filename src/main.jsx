@@ -17,11 +17,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "hotels",
-        element: <App />,
+        element: <div>Hotels</div>,
       },
       {
         path: "flights",
-        element: <App />,
+        element: <div>Flights</div>,
       },
       {
         path: "business",

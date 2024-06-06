@@ -28,14 +28,18 @@ function LeftNavBar() {
 
   return (
     <div className='space-x-8 mx-8 '>
-            <NavLink to={`/flights`} style={({ isActive }) => ({
+            <NavLink to={`/flights`}
+             style={({ isActive }) => ({
             borderBottom: isActive ? '4px solid #6ece3e' : 'none',
-          })} className=' px-0 py-4 font-sans font-bold m-0 '>
+          })} 
+            className=' px-0 py-4 font-sans font-bold m-0 '>
             Flights 
             </NavLink>
-        <NavLink to={`/hotels`}  style={({ isActive }) => ({
+        <NavLink to={`/hotels`}  
+        style={({ isActive }) => ({
             borderBottom: isActive ? '4px solid #6ece3e' : 'none',
-          })}  className=' px-0 py-4 font-sans font-bold m-0'>
+          })}  
+        className=' px-0 py-4 font-sans font-bold m-0'>
             Hotels
         </NavLink>
         
