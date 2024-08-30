@@ -7,6 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import TravelBlog from './components/TravelBlog.jsx';
 
 
 
@@ -27,8 +28,13 @@ const router = createBrowserRouter([
         path: "business",
         element: <div>Page Under Development</div>,
       },
+      
     ],
   },
+  {
+    path: "/travel-blog",
+    element: <TravelBlog />
+  }
 ]);
 
 
