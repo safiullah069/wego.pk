@@ -1,6 +1,6 @@
 import React from 'react'
 import { flagApi } from '../PseudoApis/flagApis'
-import '../../App.css'
+// import '../../App.css'
 
 function FlagComp({ onButtonClick }) {
 

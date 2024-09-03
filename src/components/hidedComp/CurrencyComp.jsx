@@ -1,6 +1,6 @@
 import React from 'react'
 import { currencyApis } from '../PseudoApis/currencyApis'
-import '../../App.css'
+// import '../../App.css'
 
 function CurrencyComp({ onButtonClick }) {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { languageApis } from '../PseudoApis/languageApis'
-import '../../App.css'
+// import '../../App.css'
 
 function LanguageComp({ onButtonClick }) {
 
