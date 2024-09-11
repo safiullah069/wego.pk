@@ -12,6 +12,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const checkingGit = () => {
-  return null
-}
+export default app;
