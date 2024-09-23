@@ -8,6 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import TravelBlog from './components/TravelBlog.jsx';
+import { FirebaseProvider } from './firebase/firebase.jsx';
 
 
 
@@ -41,6 +42,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <FirebaseProvider>
+
     <RouterProvider router={router} />
+    </FirebaseProvider>
   </React.StrictMode>,
 )

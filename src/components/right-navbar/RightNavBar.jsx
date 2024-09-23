@@ -4,12 +4,13 @@ import LanguageBtn from './LanguageBtn';
 import CurrencyBtn from './CurrencyBtn';
 import LoginBtn from './LoginBtn';
 import SignUpBtn from './SignUpBtn';
-
+import { useFirebase } from '../../firebase/firebase';
 
 
 
 function RightNavBar() {
 
+    const firebase = useFirebase()
 
 
     return (
@@ -19,9 +20,14 @@ function RightNavBar() {
                 <LanguageBtn/>
                 <CurrencyBtn/>
             </div>
-            <div className='flex justify-between space-x-4  '>
-                <LoginBtn/>
-                <SignUpBtn/>
+            <div >
+                {firebase.isLoggedIn ? null : (
+                    <div className='flex justify-between space-x-4  '>
+                        <LoginBtn/>
+                        <SignUpBtn/>
+                    </div>
+                )
+            }
             </div>
         </div>
 
