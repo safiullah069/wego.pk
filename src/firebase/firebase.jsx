@@ -61,7 +61,7 @@ export const FirebaseProvider = (props) => {
   }
 
   const logout = async () => {
-    await signOut(firebaseAuth)
+    await signOut(auth)
 
   }
 
