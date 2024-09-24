@@ -36,28 +36,20 @@ export const FirebaseProvider = (props) => {
     })
   }, [])
 
-  const signupUserWithEmailAndPassword = (email, password, displayName) => {
-    try {
-        const signUpResult = createUserWithEmailAndPassword(auth, email, password, displayName)
+  const signupUserWithEmailAndPassword =  (email, password, displayName) => {
+
+        const signUpResult =  createUserWithEmailAndPassword(auth, email, password, displayName)
         .then((userCredential) => {
-            let user = userCredential.user;
-            return user.updateProfile(auth.currentUser, {
-            displayName: displayName
-            });
-        })
-        .then(() => {
-            console.log("Display name updated to: " + auth.currentUser.displayName);
+            console.log(userCredential.user);
+            return userCredential
         })
         .catch((error) => {
-            // if (error.code === 'auth/email-already-in-use') {
-            //     console.log("try logging in");
-            // }
-            console.log(error);
+            if (error.code === 'auth/email-already-in-use') {
+                console.log("try logging in");
+            }
+
         })
         console.log(signUpResult);
-    } catch (error) {
-        console.log("Try Logging In");
-    }
   }
 
   const signInUserWithEmailAndPassword = (email, password) => {
