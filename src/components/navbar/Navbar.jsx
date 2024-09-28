@@ -22,7 +22,7 @@ function Navbar() {
 
     <ScrollContext.Provider value={{ isScrolled }}>
 
-      <nav className={`fixed top-0 w-full z-10 flex justify-between px-20 py-0 m-0 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 w-full  flex justify-between px-20 py-0 m-0 z-20 ${isScrolled ? "bg-white" : "bg-transparent"}`}>
         <div className='flex justify-end items-center'>
           <Link to={`/`}>       
               {isScrolled ? <img src="src/assets/logo_dark.png" alt="Logo" className="h-8 "  /> : <img src="src/assets/logo_ligth.png" alt="Logo" className="h-8 " />}

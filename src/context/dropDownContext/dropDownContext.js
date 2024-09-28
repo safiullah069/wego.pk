@@ -1,5 +1,5 @@
 import React from 'react';
-
-const dropDownContext = React.createContext();
+import { createContext } from 'react';
+const dropDownContext = createContext();
 
 export default dropDownContext;
