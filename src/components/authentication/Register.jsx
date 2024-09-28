@@ -22,7 +22,7 @@ function Register({ closeModal }) {
         closeModal()
     }
     return (
-        <div className='w-60 h-40 border border-red-500 bg-gray-300 '>
+        <div className='w-60 h-40 border border-red-500 bg-gray-300 absolute top-40 right-30 '>
             <form action="">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" value={name} onChange={(e) => { setName(e.target.value) }} />

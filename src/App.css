@@ -1,8 +1,25 @@
-.button-container {
-    flex: 1 0 25%; /* This will make every button take up 25% of the width, creating 4 columns */
+/* .button-container {
+    flex: 1 0 25%; 
 
-  }
+  } */
 
-  .lang-button-container{
+  /* .lang-button-container{
     flex: 1 0 33%;
+  } */
+
+  
+  .custom-dots {
+    @apply !flex justify-center h-8  absolute top-1/2 w-full  items-center ; /* Center dots with spacing */
+  }
+  
+  .custom-dots li {
+    @apply   flex items-center justify-center mx-2 h-full space-x-4;
+  }
+  
+  .custom-dots li div {
+    @apply rounded-full   bg-transparent ; /* Dot size and background color   */
+  }
+  
+  .custom-dots li.slick-active div {
+    @apply bg-white; /* Change color when active */
   }
